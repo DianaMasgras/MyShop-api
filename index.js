@@ -1,11 +1,10 @@
-const express = require('express')
+const express = require("express");
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 8080;
 
-app.get('/', (req, res) => {
-  res.send('Hello Di!')
+app.get("/products", (res) => {
+  console.log("Connected to React");
+  res.send([{ name: 'name1' }, { name: 'name2' }]);
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`)
-});
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
