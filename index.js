@@ -18,7 +18,14 @@ app.use(function (req, res, next) {
 
 app.get("/products", (req, res) => {
   console.log("Connected to React");
-  res.send([{ name: 'name1' }, { name: 'name2' }]);
+  res.send([
+    { name: 'name1', price: 100, description: 'red' }, 
+    { name: 'name2', price: 110, description: 'blue' }, 
+    { name: 'name3', price: 120, description: 'green' }, 
+    { name: 'name4', price: 130, description: 'pink' }, 
+    { name: 'name5', price: 140, description: 'black' }, 
+    { name: 'name6', price: 150, description: 'white' }
+  ]);
 });
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
